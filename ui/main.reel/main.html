@@ -12,11 +12,54 @@
                 "properties": {
                     "element": {"#": "main"}
                 }
+            },
+
+            "button": {
+                "prototype": "digit/ui/button.reel",
+                "properties": {
+                    "element": {"#": "button"},
+                    "label": "switch"
+                },
+                "listeners": [{
+                    "type": "action",
+                    "listener": {"@": "owner"},
+                    "capture": true
+                }]
+            },
+
+            "mySubstitution": {
+                "prototype": "montage/ui/substitution.reel",
+                "properties": {
+                    "element": {"#": "mySubstitution"}
+                },
+                "bindings": {
+                    "switchValue": {"<-": "@owner.selectedList"}
+                }
+            },
+
+            "list1": {
+                "prototype": "ui/list1.reel",
+                "properties": {
+                    "element": {"#": "list1"}
+                }
+            },
+
+            "list2": {
+                "prototype": "ui/list2.reel",
+                "properties": {
+                    "element": {"#": "list2"}
+                }
             }
         }
     </script>
 </head>
 <body>
-    <div data-montage-id="main" data-montage-skin="light" class="Main"></div>
+    <div data-montage-id="main" data-montage-skin="light" class="Main">
+        <div data-montage-id="button"></div>
+        <div data-montage-id="mySubstitution">
+            <div data-arg="list1" data-montage-id="list1"></div>
+            <div data-arg="list2" data-montage-id="list2"></div>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="list-template.css">
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "owner"}
+            }
+        },
+
+        "repetition": {
+            "prototype": "montage/ui/repetition.reel",
+            "properties": {
+                "element": {"#": "repetition"}
+            },
+            "bindings": {
+                "content": {"<-": "@owner.content"}
+            }
+        },
+        ":cell": {
+            "alias": "@repetition:iteration"
+        }
+    }
+    </script>
+</head>
+<body>
+    <div data-montage-id="owner" class="ListTemplate">
+        <ul data-montage-id="repetition">
+            <li data-param="cell"></li>
+        </ul>
+    </div>
+</body>
+</html>

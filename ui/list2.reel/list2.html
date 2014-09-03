@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="list2.css">
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "owner"}
+            }
+        },
+
+        "listTemplate": {
+            "prototype": "ui/list-template.reel",
+            "properties": {
+                "element": {"#": "listTemplate"},
+                "content": [4, 5, 6]
+            }
+        },
+        "cellText": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "cellText"}
+            },
+            "bindings": {
+                "value": {"<-": "@listTemplate:cell.object"}
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <div data-montage-id="owner" class="List2">
+        <div data-montage-id="listTemplate">
+            <div data-arg="cell">
+                <span data-montage-id="cellText"></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
